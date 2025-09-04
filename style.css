@@ -1,0 +1,316 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #041029; /* Dark blue background */
+    color: #e0e0e0; /* Light gray text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Main Content Wrapper */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container for Converter Page */
+.container {
+    background-color: #1f2937; /* Darker gray background for the card */
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    width: 100%;
+    max-width: 760px; /* Max width for the converter */
+    box-sizing: border-box;
+}
+
+/* Header for Converter Page */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+.header h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.8em;
+}
+
+.user-info {
+    font-size: 0.9em;
+}
+
+.user-info a {
+    color: #fbbf24; /* Amber color for logout link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.user-info a:hover {
+    text-decoration: underline;
+}
+
+/* Flash Messages */
+.flash-messages {
+    margin-bottom: 15px;
+}
+
+.alert {
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: rgba(16, 185, 129, 0.2); /* Greenish */
+    color: #10b981;
+    border: 1px solid #10b981;
+}
+
+.alert-warning {
+    background-color: rgba(251, 191, 36, 0.2); /* Yellowish */
+    color: #fbbf24;
+    border: 1px solid #fbbf24;
+}
+
+.alert-danger {
+    background-color: rgba(239, 68, 68, 0.2); /* Reddish */
+    color: #ef4444;
+    border: 1px solid #ef4444;
+}
+
+.alert-info {
+    background-color: rgba(59, 130, 246, 0.2); /* Bluish */
+    color: #3b82f6;
+    border: 1px solid #3b82f6;
+}
+
+
+/* Converter Form */
+.converter-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr auto; /* Adjust column widths */
+    gap: 15px; /* Space between form elements */
+    align-items: center;
+}
+
+.converter-form select,
+.converter-form input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #4a5568; /* Darker border */
+    background-color: #2d3748; /* Slightly lighter dark background */
+    color: #e0e0e0;
+    font-size: 1em;
+    -webkit-appearance: none; /* Remove default select arrow on WebKit browsers */
+    -moz-appearance: none; /* Remove default select arrow on Firefox */
+    appearance: none; /* Remove default select arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23e0e0e0%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-5.4H18.6c-5%200-9.3%201.8-13.2%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2013.2l128%20127.9c3.9%203.9%208.2%205.8%2013.2%205.8s9.3-1.9%2013.2-5.8L287%2095.4a17.6%2017.6%200%200%200%205.4-13.2c0-5-1.8-9.3-5.4-13.2z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px auto;
+}
+
+.converter-form select option {
+    background-color: #2d3748; /* Background for options */
+    color: #e0e0e0;
+}
+
+.converter-form button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #3b82f6; /* Blue button */
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ensure button takes full grid column width */
+}
+
+.converter-form button:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+}
+
+/* Result Display */
+.result-box {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05); /* Very subtle light background */
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Auth Pages (Login/Register) Container */
+.auth-container {
+    background-color: #1f2937; /* Same as converter container */
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 380px; /* Smaller width for auth forms */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.auth-container h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-size: 2em;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+    width: calc(100% - 24px); /* Full width minus padding */
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #4a5568;
+    background-color: #2d3748;
+    color: #e0e0e0;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.auth-container input::placeholder {
+    color: #a0aec0; /* Lighter placeholder text */
+}
+
+.auth-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #3b82f6; /* Blue for login button */
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-container button:hover {
+    background-color: #2563eb;
+}
+
+.auth-container .register-button {
+    background-color: #10b981; /* Green for register button */
+}
+
+.auth-container .register-button:hover {
+    background-color: #059669;
+}
+
+.auth-link {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #a0aec0; /* Gray text for links */
+}
+
+.auth-link a {
+    color: #3b82f6; /* Blue link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1f2937;
+    color: #e0e0e0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+
+    .header h2 {
+        margin-bottom: 10px;
+        font-size: 1.5em;
+    }
+
+    .converter-form {
+        grid-template-columns: 1fr; /* Stack elements on small screens */
+        gap: 10px;
+    }
+
+    .auth-container {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    .auth-container h2 {
+        font-size: 1.8em;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}

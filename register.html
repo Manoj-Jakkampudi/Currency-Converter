@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="main-content">
+    <div class="auth-container">
+    <h2>Create Account</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, msg in messages %}
+            <div class="alert alert-{{ category }}">{{ msg }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <form method="POST" action="{{ url_for('register') }}">
+      <input type="text" name="username" placeholder="Choose Username" required><br>
+      <input type="password" name="password" placeholder="Choose Password" required><br>
+      <button type="submit" class="register-button">Register</button>
+    </form>
+    <p class="auth-link">Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+        <a href="{{ url_for('terms') }}">Terms of Service</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+      </div>
+      <p>&copy; 2023 Currency Converter. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

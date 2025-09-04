@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="main-content">
+    <div class="container">
+    <div class="header">
+      <h2>Currency Converter</h2>
+      <div class="user-info">
+        Hi, <b>{{ username }}</b> • <a href="{{ url_for('logout') }}">Logout</a>
+      </div>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, msg in messages %}
+            <div class="alert alert-{{ category }}">{{ msg }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('converter') }}" class="converter-form">
+      <select name="from_currency" required>
+        {% for code in currencies %}
+          <option value="{{ code }}" {% if code == selected_from_cur %}selected{% endif %}>{{ code }}</option>
+        {% endfor %}
+      </select>
+      <select name="to_currency" required>
+        {% for code in currencies %}
+          <option value="{{ code }}" {% if code == selected_to_cur %}selected{% endif %}>{{ code }}</option>
+        {% endfor %}
+      </select>
+      <input type="number" step="any" name="amount" placeholder="Amount" required value="{{ input_amount }}">
+      <button type="submit">Convert</button>
+    </form>
+
+    {% if result %}
+      <div class="result-box">
+        {{ result }}
+      </div>
+    {% endif %}
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+        <a href="{{ url_for('terms') }}">Terms of Service</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+      </div>
+      <p>&copy; 2023 Currency Converter. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

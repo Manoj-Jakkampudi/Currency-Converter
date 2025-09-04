@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="main-content">
+    <div class="container">
+    <h1>Contact Us</h1>
+
+    <h2>Get in Touch</h2>
+    <p>We'd love to hear from you! If you have any questions, feedback, or need support, please reach out to us.</p>
+
+    <h3>Email</h3>
+    <p>manojjakkampudi889@gmail.com</p>
+
+    <h3>Phone</h3>
+    <p>+91 6305481355</p>
+
+    <h3>Address</h3>
+    <p>123 Currency Street<br>
+    Finance City, FC 12345<br>
+    United States</p>
+
+    <h3>Business Hours</h3>
+    <p>Monday - Friday: 9:00 AM - 5:00 PM EST<br>
+    Saturday - Sunday: Closed</p>
+
+    <p><a href="{{ url_for('root') }}">Back to Home</a></p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+        <a href="{{ url_for('terms') }}">Terms of Service</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+      </div>
+      <p>&copy; 2025 Currency Converter. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
